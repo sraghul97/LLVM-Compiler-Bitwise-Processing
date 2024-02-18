@@ -1,0 +1,12 @@
+/tmp/tmp.gSNwgu8LYk/cmake-build-debug-remotellvm/CMakeFiles/intrinsics_gen.dir
+/tmp/tmp.gSNwgu8LYk/cmake-build-debug-remotellvm/CMakeFiles/omp_gen.dir
+/tmp/tmp.gSNwgu8LYk/cmake-build-debug-remotellvm/CMakeFiles/acc_gen.dir
+/tmp/tmp.gSNwgu8LYk/cmake-build-debug-remotellvm/CMakeFiles/RISCVTargetParserTableGen.dir
+/tmp/tmp.gSNwgu8LYk/cmake-build-debug-remotellvm/CMakeFiles/p1.dir
+/tmp/tmp.gSNwgu8LYk/cmake-build-debug-remotellvm/CMakeFiles/test.dir
+/tmp/tmp.gSNwgu8LYk/cmake-build-debug-remotellvm/CMakeFiles/edit_cache.dir
+/tmp/tmp.gSNwgu8LYk/cmake-build-debug-remotellvm/CMakeFiles/rebuild_cache.dir
+/tmp/tmp.gSNwgu8LYk/cmake-build-debug-remotellvm/tests/CMakeFiles/llvm-inst-count.dir
+/tmp/tmp.gSNwgu8LYk/cmake-build-debug-remotellvm/tests/CMakeFiles/test.dir
+/tmp/tmp.gSNwgu8LYk/cmake-build-debug-remotellvm/tests/CMakeFiles/edit_cache.dir
+/tmp/tmp.gSNwgu8LYk/cmake-build-debug-remotellvm/tests/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,749 @@
+Start testing: Feb 18 22:31 UTC
+----------------------------------------------------------
+1/46 Testing: Fail-fail_1
+1/46 Test: Fail-fail_1
+Command: "/ece566/projects/p1/c++/build/p1" "/ece566/projects/p1/c++/tests/fail_1.p1" "/ece566/projects/p1/c++/build/tests/fail_1.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"Fail-fail_1" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+syntax error
+Errors. No module produced.
+<end of output>
+Test time =   0.15 sec
+----------------------------------------------------------
+Test Passed.
+"Fail-fail_1" end time: Feb 18 22:31 UTC
+"Fail-fail_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/46 Testing: Fail-fail_2
+2/46 Test: Fail-fail_2
+Command: "/ece566/projects/p1/c++/build/p1" "/ece566/projects/p1/c++/tests/fail_2.p1" "/ece566/projects/p1/c++/build/tests/fail_2.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"Fail-fail_2" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+syntax error
+Errors. No module produced.
+<end of output>
+Test time =   0.18 sec
+----------------------------------------------------------
+Test Passed.
+"Fail-fail_2" end time: Feb 18 22:31 UTC
+"Fail-fail_2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/46 Testing: Fail-fail_3
+3/46 Test: Fail-fail_3
+Command: "/ece566/projects/p1/c++/build/p1" "/ece566/projects/p1/c++/tests/fail_3.p1" "/ece566/projects/p1/c++/build/tests/fail_3.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"Fail-fail_3" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+; ModuleID = 'fail_3'
+source_filename = "fail_3"
+
+define i32 @fail_3() {
+entry:
+  ret i32 0
+}
+ERROR! It’s illegal to get/read 'arg' before defining 'arg'
+<end of output>
+Test time =   0.22 sec
+----------------------------------------------------------
+Test Failed.
+"Fail-fail_3" end time: Feb 18 22:31 UTC
+"Fail-fail_3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/46 Testing: Fail-fail_4
+4/46 Test: Fail-fail_4
+Command: "/ece566/projects/p1/c++/build/p1" "/ece566/projects/p1/c++/tests/fail_4.p1" "/ece566/projects/p1/c++/build/tests/fail_4.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"Fail-fail_4" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+ERROR! It’s illegal to set a bit of 'b' before defining 'b'
+Errors. No module produced.
+<end of output>
+Test time =   0.16 sec
+----------------------------------------------------------
+Test Passed.
+"Fail-fail_4" end time: Feb 18 22:31 UTC
+"Fail-fail_4" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/46 Testing: 566-test_0
+5/46 Test: 566-test_0
+Command: "/ece566/projects/p1/c++/build/tests/test_0"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_0" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_0" end time: Feb 18 22:31 UTC
+"566-test_0" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/46 Testing: InstCount-test_0
+6/46 Test: InstCount-test_0
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_0.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_0" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_0.bc: 1
+Total = 1
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_0" end time: Feb 18 22:31 UTC
+"InstCount-test_0" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/46 Testing: 566-test_1
+7/46 Test: 566-test_1
+Command: "/ece566/projects/p1/c++/build/tests/test_1"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_1" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_1" end time: Feb 18 22:31 UTC
+"566-test_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/46 Testing: InstCount-test_1
+8/46 Test: InstCount-test_1
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_1.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_1" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_1.bc: 1
+Total = 1
+<end of output>
+Test time =   0.13 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_1" end time: Feb 18 22:31 UTC
+"InstCount-test_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/46 Testing: 566-test_2
+9/46 Test: 566-test_2
+Command: "/ece566/projects/p1/c++/build/tests/test_2"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_2" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_2" end time: Feb 18 22:31 UTC
+"566-test_2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/46 Testing: InstCount-test_2
+10/46 Test: InstCount-test_2
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_2.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_2" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_2.bc: 1
+Total = 1
+<end of output>
+Test time =   0.18 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_2" end time: Feb 18 22:31 UTC
+"InstCount-test_2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/46 Testing: 566-test_3
+11/46 Test: 566-test_3
+Command: "/ece566/projects/p1/c++/build/tests/test_3"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_3" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_3" end time: Feb 18 22:31 UTC
+"566-test_3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/46 Testing: InstCount-test_3
+12/46 Test: InstCount-test_3
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_3.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_3" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_3.bc: 1
+Total = 1
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_3" end time: Feb 18 22:31 UTC
+"InstCount-test_3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/46 Testing: 566-test_4
+13/46 Test: 566-test_4
+Command: "/ece566/projects/p1/c++/build/tests/test_4"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_4" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_4" end time: Feb 18 22:31 UTC
+"566-test_4" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/46 Testing: InstCount-test_4
+14/46 Test: InstCount-test_4
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_4.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_4" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_4.bc: 1
+Total = 1
+<end of output>
+Test time =   0.15 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_4" end time: Feb 18 22:31 UTC
+"InstCount-test_4" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/46 Testing: 566-test_5
+15/46 Test: 566-test_5
+Command: "/ece566/projects/p1/c++/build/tests/test_5"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_5" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_5" end time: Feb 18 22:31 UTC
+"566-test_5" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/46 Testing: InstCount-test_5
+16/46 Test: InstCount-test_5
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_5.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_5" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_5.bc: 1
+Total = 1
+<end of output>
+Test time =   0.13 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_5" end time: Feb 18 22:31 UTC
+"InstCount-test_5" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/46 Testing: 566-test_6
+17/46 Test: 566-test_6
+Command: "/ece566/projects/p1/c++/build/tests/test_6"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_6" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_6" end time: Feb 18 22:31 UTC
+"566-test_6" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/46 Testing: InstCount-test_6
+18/46 Test: InstCount-test_6
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_6.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_6" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_6.bc: 13
+Total = 13
+<end of output>
+Test time =   0.27 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_6" end time: Feb 18 22:31 UTC
+"InstCount-test_6" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/46 Testing: 566-test_7
+19/46 Test: 566-test_7
+Command: "/ece566/projects/p1/c++/build/tests/test_7"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_7" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_7" end time: Feb 18 22:31 UTC
+"566-test_7" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/46 Testing: InstCount-test_7
+20/46 Test: InstCount-test_7
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_7.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_7" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_7.bc: 40
+Total = 40
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_7" end time: Feb 18 22:31 UTC
+"InstCount-test_7" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/46 Testing: 566-test_8
+21/46 Test: 566-test_8
+Command: "/ece566/projects/p1/c++/build/tests/test_8"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_8" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_8" end time: Feb 18 22:31 UTC
+"566-test_8" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/46 Testing: InstCount-test_8
+22/46 Test: InstCount-test_8
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_8.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_8" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_8.bc: 7
+Total = 7
+<end of output>
+Test time =   0.15 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_8" end time: Feb 18 22:31 UTC
+"InstCount-test_8" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/46 Testing: 566-test_15
+23/46 Test: 566-test_15
+Command: "/ece566/projects/p1/c++/build/tests/test_15"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_15" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_15" end time: Feb 18 22:31 UTC
+"566-test_15" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/46 Testing: InstCount-test_15
+24/46 Test: InstCount-test_15
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_15.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_15" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_15.bc: 48
+Total = 48
+<end of output>
+Test time =   0.13 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_15" end time: Feb 18 22:31 UTC
+"InstCount-test_15" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/46 Testing: 566-test_9
+25/46 Test: 566-test_9
+Command: "/ece566/projects/p1/c++/build/tests/test_9"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_9" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_9" end time: Feb 18 22:31 UTC
+"566-test_9" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/46 Testing: InstCount-test_9
+26/46 Test: InstCount-test_9
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_9.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_9" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_9.bc: 148
+Total = 148
+<end of output>
+Test time =   0.12 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_9" end time: Feb 18 22:31 UTC
+"InstCount-test_9" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/46 Testing: 566-test_10
+27/46 Test: 566-test_10
+Command: "/ece566/projects/p1/c++/build/tests/test_10"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_10" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_10" end time: Feb 18 22:31 UTC
+"566-test_10" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/46 Testing: InstCount-test_10
+28/46 Test: InstCount-test_10
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_10.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_10" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_10.bc: 1
+Total = 1
+<end of output>
+Test time =   0.13 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_10" end time: Feb 18 22:31 UTC
+"InstCount-test_10" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/46 Testing: 566-test_11
+29/46 Test: 566-test_11
+Command: "/ece566/projects/p1/c++/build/tests/test_11"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_11" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_11" end time: Feb 18 22:31 UTC
+"566-test_11" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/46 Testing: InstCount-test_11
+30/46 Test: InstCount-test_11
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_11.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_11" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_11.bc: 1
+Total = 1
+<end of output>
+Test time =   0.15 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_11" end time: Feb 18 22:31 UTC
+"InstCount-test_11" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/46 Testing: 566-test_12
+31/46 Test: 566-test_12
+Command: "/ece566/projects/p1/c++/build/tests/test_12"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_12" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_12" end time: Feb 18 22:31 UTC
+"566-test_12" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/46 Testing: InstCount-test_12
+32/46 Test: InstCount-test_12
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_12.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_12" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_12.bc: 1
+Total = 1
+<end of output>
+Test time =   0.12 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_12" end time: Feb 18 22:31 UTC
+"InstCount-test_12" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/46 Testing: 566-test_13
+33/46 Test: 566-test_13
+Command: "/ece566/projects/p1/c++/build/tests/test_13"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_13" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_13" end time: Feb 18 22:31 UTC
+"566-test_13" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/46 Testing: InstCount-test_13
+34/46 Test: InstCount-test_13
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_13.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_13" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_13.bc: 1
+Total = 1
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_13" end time: Feb 18 22:31 UTC
+"InstCount-test_13" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/46 Testing: 566-test_14
+35/46 Test: 566-test_14
+Command: "/ece566/projects/p1/c++/build/tests/test_14"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_14" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_14" end time: Feb 18 22:31 UTC
+"566-test_14" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/46 Testing: InstCount-test_14
+36/46 Test: InstCount-test_14
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_14.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_14" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_14.bc: 1
+Total = 1
+<end of output>
+Test time =   0.18 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_14" end time: Feb 18 22:31 UTC
+"InstCount-test_14" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/46 Testing: 566-test_16
+37/46 Test: 566-test_16
+Command: "/ece566/projects/p1/c++/build/tests/test_16"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_16" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_16" end time: Feb 18 22:31 UTC
+"566-test_16" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/46 Testing: InstCount-test_16
+38/46 Test: InstCount-test_16
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_16.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_16" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_16.bc: 22
+Total = 22
+<end of output>
+Test time =   0.11 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_16" end time: Feb 18 22:31 UTC
+"InstCount-test_16" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/46 Testing: 566-test_17
+39/46 Test: 566-test_17
+Command: "/ece566/projects/p1/c++/build/tests/test_17"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-test_17" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"566-test_17" end time: Feb 18 22:31 UTC
+"566-test_17" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/46 Testing: InstCount-test_17
+40/46 Test: InstCount-test_17
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/test_17.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-test_17" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/test_17.bc: 96
+Total = 96
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-test_17" end time: Feb 18 22:31 UTC
+"InstCount-test_17" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/46 Testing: 566-flip
+41/46 Test: 566-flip
+Command: "/ece566/projects/p1/c++/build/tests/flip"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-flip" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-flip" end time: Feb 18 22:31 UTC
+"566-flip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/46 Testing: InstCount-flip
+42/46 Test: InstCount-flip
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/flip.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-flip" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/flip.bc: 12
+Total = 12
+<end of output>
+Test time =   0.20 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-flip" end time: Feb 18 22:31 UTC
+"InstCount-flip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/46 Testing: 566-syndrome_ecc
+43/46 Test: 566-syndrome_ecc
+Command: "/ece566/projects/p1/c++/build/tests/syndrome_ecc"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-syndrome_ecc" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-syndrome_ecc" end time: Feb 18 22:31 UTC
+"566-syndrome_ecc" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/46 Testing: InstCount-syndrome_ecc
+44/46 Test: InstCount-syndrome_ecc
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/syndrome_ecc.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-syndrome_ecc" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/syndrome_ecc.bc: 108
+Total = 108
+<end of output>
+Test time =   0.15 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-syndrome_ecc" end time: Feb 18 22:31 UTC
+"InstCount-syndrome_ecc" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/46 Testing: 566-into_ecc
+45/46 Test: 566-into_ecc
+Command: "/ece566/projects/p1/c++/build/tests/into_ecc"
+Directory: /ece566/projects/p1/C++/build/tests
+"566-into_ecc" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"566-into_ecc" end time: Feb 18 22:31 UTC
+"566-into_ecc" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/46 Testing: InstCount-into_ecc
+46/46 Test: InstCount-into_ecc
+Command: "/ece566/projects/p1/c++/build/tests/llvm-inst-count" "/ece566/projects/p1/c++/build/tests/into_ecc.bc"
+Directory: /ece566/projects/p1/C++/build/tests
+"InstCount-into_ecc" start time: Feb 18 22:31 UTC
+Output:
+----------------------------------------------------------
+/ece566/projects/p1/c++/build/tests/into_ecc.bc: 171
+Total = 171
+<end of output>
+Test time =   0.12 sec
+----------------------------------------------------------
+Test Passed.
+"InstCount-into_ecc" end time: Feb 18 22:31 UTC
+"InstCount-into_ecc" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 18 22:31 UTC

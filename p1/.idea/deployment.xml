@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="RemoteLLVM (0fe13ac8-8849-48a9-b928-38fbf6dc7a6c)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.gSNwgu8LYk" local="$PROJECT_DIR$/C++" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/C++/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/C++/cmake-build-debug-remotellvm" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

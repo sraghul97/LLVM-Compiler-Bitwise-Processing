@@ -1,0 +1,1236 @@
+Terminals unused in grammar
+
+    ERROR
+
+
+Grammar
+
+    0 $accept: program $end
+
+    1 program: inputs statements_opt final
+
+    2 inputs: IN params_list ENDLINE
+    3       | IN NONE ENDLINE
+
+    4 params_list: ID
+    5            | params_list COMMA ID
+
+    6 final: FINAL ensemble endline_opt
+
+    7 endline_opt: %empty
+    8            | ENDLINE
+
+    9 statements_opt: %empty
+   10               | statements
+
+   11 statements: statement
+   12           | statements statement
+
+   13 statement: ID ASSIGN ensemble ENDLINE
+   14          | ID NUMBER ASSIGN ensemble ENDLINE
+   15          | ID LBRACKET ensemble RBRACKET ASSIGN ensemble ENDLINE
+
+   16 ensemble: expr
+   17         | expr COLON NUMBER
+   18         | ensemble COMMA expr
+   19         | ensemble COMMA expr COLON NUMBER
+
+   20 expr: ID
+   21     | ID NUMBER
+   22     | NUMBER
+   23     | expr PLUS expr
+   24     | expr MINUS expr
+   25     | expr XOR expr
+   26     | expr AND expr
+   27     | expr OR expr
+   28     | INV expr
+   29     | BINV expr
+   30     | expr MUL expr
+   31     | expr DIV expr
+   32     | expr MOD expr
+   33     | ID LBRACKET ensemble RBRACKET
+   34     | LPAREN ensemble RPAREN
+   35     | LPAREN ensemble RPAREN LBRACKET ensemble RBRACKET
+   36     | REDUCE AND LPAREN ensemble RPAREN
+   37     | REDUCE OR LPAREN ensemble RPAREN
+   38     | REDUCE XOR LPAREN ensemble RPAREN
+   39     | REDUCE PLUS LPAREN ensemble RPAREN
+   40     | EXPAND LPAREN ensemble RPAREN
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    IN (258) 2 3
+    FINAL (259) 6
+    ERROR (260)
+    NUMBER <union_number> (261) 14 17 19 21 22
+    ID <union_id> (262) 4 5 13 14 15 20 21 33
+    BINV (263) 29
+    INV (264) 28
+    PLUS (265) 23 39
+    MINUS (266) 24
+    XOR (267) 25 38
+    AND (268) 26 36
+    OR (269) 27 37
+    MUL (270) 30
+    DIV (271) 31
+    MOD (272) 32
+    COMMA (273) 5 18 19
+    ENDLINE (274) 2 3 8 13 14 15
+    ASSIGN (275) 13 14 15
+    LBRACKET (276) 15 33 35
+    RBRACKET (277) 15 33 35
+    LPAREN (278) 34 35 36 37 38 39 40
+    RPAREN (279) 34 35 36 37 38 39 40
+    NONE (280) 3
+    COLON (281) 17 19
+    REDUCE (282) 36 37 38 39
+    EXPAND (283) 40
+
+
+Nonterminals, with rules where they appear
+
+    $accept (29)
+        on left: 0
+    program (30)
+        on left: 1
+        on right: 0
+    inputs (31)
+        on left: 2 3
+        on right: 1
+    params_list <params_list> (32)
+        on left: 4 5
+        on right: 2 5
+    final (33)
+        on left: 6
+        on right: 1
+    endline_opt (34)
+        on left: 7 8
+        on right: 6
+    statements_opt (35)
+        on left: 9 10
+        on right: 1
+    statements <union_value> (36)
+        on left: 11 12
+        on right: 10 12
+    statement <union_value> (37)
+        on left: 13 14 15
+        on right: 11 12
+    ensemble <union_value> (38)
+        on left: 16 17 18 19
+        on right: 6 13 14 15 18 19 33 34 35 36 37 38 39 40
+    expr <union_value> (39)
+        on left: 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40
+        on right: 16 17 18 19 23 24 25 26 27 28 29 30 31 32
+
+
+State 0
+
+    0 $accept: . program $end
+
+    IN  shift, and go to state 1
+
+    program  go to state 2
+    inputs   go to state 3
+
+
+State 1
+
+    2 inputs: IN . params_list ENDLINE
+    3       | IN . NONE ENDLINE
+
+    ID    shift, and go to state 4
+    NONE  shift, and go to state 5
+
+    params_list  go to state 6
+
+
+State 2
+
+    0 $accept: program . $end
+
+    $end  shift, and go to state 7
+
+
+State 3
+
+    1 program: inputs . statements_opt final
+
+    ID  shift, and go to state 8
+
+    $default  reduce using rule 9 (statements_opt)
+
+    statements_opt  go to state 9
+    statements      go to state 10
+    statement       go to state 11
+
+
+State 4
+
+    4 params_list: ID .
+
+    $default  reduce using rule 4 (params_list)
+
+
+State 5
+
+    3 inputs: IN NONE . ENDLINE
+
+    ENDLINE  shift, and go to state 12
+
+
+State 6
+
+    2 inputs: IN params_list . ENDLINE
+    5 params_list: params_list . COMMA ID
+
+    COMMA    shift, and go to state 13
+    ENDLINE  shift, and go to state 14
+
+
+State 7
+
+    0 $accept: program $end .
+
+    $default  accept
+
+
+State 8
+
+   13 statement: ID . ASSIGN ensemble ENDLINE
+   14          | ID . NUMBER ASSIGN ensemble ENDLINE
+   15          | ID . LBRACKET ensemble RBRACKET ASSIGN ensemble ENDLINE
+
+    NUMBER    shift, and go to state 15
+    ASSIGN    shift, and go to state 16
+    LBRACKET  shift, and go to state 17
+
+
+State 9
+
+    1 program: inputs statements_opt . final
+
+    FINAL  shift, and go to state 18
+
+    final  go to state 19
+
+
+State 10
+
+   10 statements_opt: statements .
+   12 statements: statements . statement
+
+    ID  shift, and go to state 8
+
+    $default  reduce using rule 10 (statements_opt)
+
+    statement  go to state 20
+
+
+State 11
+
+   11 statements: statement .
+
+    $default  reduce using rule 11 (statements)
+
+
+State 12
+
+    3 inputs: IN NONE ENDLINE .
+
+    $default  reduce using rule 3 (inputs)
+
+
+State 13
+
+    5 params_list: params_list COMMA . ID
+
+    ID  shift, and go to state 21
+
+
+State 14
+
+    2 inputs: IN params_list ENDLINE .
+
+    $default  reduce using rule 2 (inputs)
+
+
+State 15
+
+   14 statement: ID NUMBER . ASSIGN ensemble ENDLINE
+
+    ASSIGN  shift, and go to state 22
+
+
+State 16
+
+   13 statement: ID ASSIGN . ensemble ENDLINE
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    ensemble  go to state 30
+    expr      go to state 31
+
+
+State 17
+
+   15 statement: ID LBRACKET . ensemble RBRACKET ASSIGN ensemble ENDLINE
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    ensemble  go to state 32
+    expr      go to state 31
+
+
+State 18
+
+    6 final: FINAL . ensemble endline_opt
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    ensemble  go to state 33
+    expr      go to state 31
+
+
+State 19
+
+    1 program: inputs statements_opt final .
+
+    $default  reduce using rule 1 (program)
+
+
+State 20
+
+   12 statements: statements statement .
+
+    $default  reduce using rule 12 (statements)
+
+
+State 21
+
+    5 params_list: params_list COMMA ID .
+
+    $default  reduce using rule 5 (params_list)
+
+
+State 22
+
+   14 statement: ID NUMBER ASSIGN . ensemble ENDLINE
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    ensemble  go to state 34
+    expr      go to state 31
+
+
+State 23
+
+   22 expr: NUMBER .
+
+    $default  reduce using rule 22 (expr)
+
+
+State 24
+
+   20 expr: ID .
+   21     | ID . NUMBER
+   33     | ID . LBRACKET ensemble RBRACKET
+
+    NUMBER    shift, and go to state 35
+    LBRACKET  shift, and go to state 36
+
+    $default  reduce using rule 20 (expr)
+
+
+State 25
+
+   29 expr: BINV . expr
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    expr  go to state 37
+
+
+State 26
+
+   28 expr: INV . expr
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    expr  go to state 38
+
+
+State 27
+
+   34 expr: LPAREN . ensemble RPAREN
+   35     | LPAREN . ensemble RPAREN LBRACKET ensemble RBRACKET
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    ensemble  go to state 39
+    expr      go to state 31
+
+
+State 28
+
+   36 expr: REDUCE . AND LPAREN ensemble RPAREN
+   37     | REDUCE . OR LPAREN ensemble RPAREN
+   38     | REDUCE . XOR LPAREN ensemble RPAREN
+   39     | REDUCE . PLUS LPAREN ensemble RPAREN
+
+    PLUS  shift, and go to state 40
+    XOR   shift, and go to state 41
+    AND   shift, and go to state 42
+    OR    shift, and go to state 43
+
+
+State 29
+
+   40 expr: EXPAND . LPAREN ensemble RPAREN
+
+    LPAREN  shift, and go to state 44
+
+
+State 30
+
+   13 statement: ID ASSIGN ensemble . ENDLINE
+   18 ensemble: ensemble . COMMA expr
+   19         | ensemble . COMMA expr COLON NUMBER
+
+    COMMA    shift, and go to state 45
+    ENDLINE  shift, and go to state 46
+
+
+State 31
+
+   16 ensemble: expr .
+   17         | expr . COLON NUMBER
+   23 expr: expr . PLUS expr
+   24     | expr . MINUS expr
+   25     | expr . XOR expr
+   26     | expr . AND expr
+   27     | expr . OR expr
+   30     | expr . MUL expr
+   31     | expr . DIV expr
+   32     | expr . MOD expr
+
+    PLUS   shift, and go to state 47
+    MINUS  shift, and go to state 48
+    XOR    shift, and go to state 49
+    AND    shift, and go to state 50
+    OR     shift, and go to state 51
+    MUL    shift, and go to state 52
+    DIV    shift, and go to state 53
+    MOD    shift, and go to state 54
+    COLON  shift, and go to state 55
+
+    $default  reduce using rule 16 (ensemble)
+
+
+State 32
+
+   15 statement: ID LBRACKET ensemble . RBRACKET ASSIGN ensemble ENDLINE
+   18 ensemble: ensemble . COMMA expr
+   19         | ensemble . COMMA expr COLON NUMBER
+
+    COMMA     shift, and go to state 45
+    RBRACKET  shift, and go to state 56
+
+
+State 33
+
+    6 final: FINAL ensemble . endline_opt
+   18 ensemble: ensemble . COMMA expr
+   19         | ensemble . COMMA expr COLON NUMBER
+
+    COMMA    shift, and go to state 45
+    ENDLINE  shift, and go to state 57
+
+    $default  reduce using rule 7 (endline_opt)
+
+    endline_opt  go to state 58
+
+
+State 34
+
+   14 statement: ID NUMBER ASSIGN ensemble . ENDLINE
+   18 ensemble: ensemble . COMMA expr
+   19         | ensemble . COMMA expr COLON NUMBER
+
+    COMMA    shift, and go to state 45
+    ENDLINE  shift, and go to state 59
+
+
+State 35
+
+   21 expr: ID NUMBER .
+
+    $default  reduce using rule 21 (expr)
+
+
+State 36
+
+   33 expr: ID LBRACKET . ensemble RBRACKET
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    ensemble  go to state 60
+    expr      go to state 31
+
+
+State 37
+
+   23 expr: expr . PLUS expr
+   24     | expr . MINUS expr
+   25     | expr . XOR expr
+   26     | expr . AND expr
+   27     | expr . OR expr
+   29     | BINV expr .
+   30     | expr . MUL expr
+   31     | expr . DIV expr
+   32     | expr . MOD expr
+
+    PLUS   shift, and go to state 47
+    MINUS  shift, and go to state 48
+    XOR    shift, and go to state 49
+    AND    shift, and go to state 50
+    OR     shift, and go to state 51
+    MUL    shift, and go to state 52
+    DIV    shift, and go to state 53
+    MOD    shift, and go to state 54
+
+    $default  reduce using rule 29 (expr)
+
+
+State 38
+
+   23 expr: expr . PLUS expr
+   24     | expr . MINUS expr
+   25     | expr . XOR expr
+   26     | expr . AND expr
+   27     | expr . OR expr
+   28     | INV expr .
+   30     | expr . MUL expr
+   31     | expr . DIV expr
+   32     | expr . MOD expr
+
+    PLUS   shift, and go to state 47
+    MINUS  shift, and go to state 48
+    XOR    shift, and go to state 49
+    AND    shift, and go to state 50
+    OR     shift, and go to state 51
+    MUL    shift, and go to state 52
+    DIV    shift, and go to state 53
+    MOD    shift, and go to state 54
+
+    $default  reduce using rule 28 (expr)
+
+
+State 39
+
+   18 ensemble: ensemble . COMMA expr
+   19         | ensemble . COMMA expr COLON NUMBER
+   34 expr: LPAREN ensemble . RPAREN
+   35     | LPAREN ensemble . RPAREN LBRACKET ensemble RBRACKET
+
+    COMMA   shift, and go to state 45
+    RPAREN  shift, and go to state 61
+
+
+State 40
+
+   39 expr: REDUCE PLUS . LPAREN ensemble RPAREN
+
+    LPAREN  shift, and go to state 62
+
+
+State 41
+
+   38 expr: REDUCE XOR . LPAREN ensemble RPAREN
+
+    LPAREN  shift, and go to state 63
+
+
+State 42
+
+   36 expr: REDUCE AND . LPAREN ensemble RPAREN
+
+    LPAREN  shift, and go to state 64
+
+
+State 43
+
+   37 expr: REDUCE OR . LPAREN ensemble RPAREN
+
+    LPAREN  shift, and go to state 65
+
+
+State 44
+
+   40 expr: EXPAND LPAREN . ensemble RPAREN
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    ensemble  go to state 66
+    expr      go to state 31
+
+
+State 45
+
+   18 ensemble: ensemble COMMA . expr
+   19         | ensemble COMMA . expr COLON NUMBER
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    expr  go to state 67
+
+
+State 46
+
+   13 statement: ID ASSIGN ensemble ENDLINE .
+
+    $default  reduce using rule 13 (statement)
+
+
+State 47
+
+   23 expr: expr PLUS . expr
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    expr  go to state 68
+
+
+State 48
+
+   24 expr: expr MINUS . expr
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    expr  go to state 69
+
+
+State 49
+
+   25 expr: expr XOR . expr
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    expr  go to state 70
+
+
+State 50
+
+   26 expr: expr AND . expr
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    expr  go to state 71
+
+
+State 51
+
+   27 expr: expr OR . expr
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    expr  go to state 72
+
+
+State 52
+
+   30 expr: expr MUL . expr
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    expr  go to state 73
+
+
+State 53
+
+   31 expr: expr DIV . expr
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    expr  go to state 74
+
+
+State 54
+
+   32 expr: expr MOD . expr
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    expr  go to state 75
+
+
+State 55
+
+   17 ensemble: expr COLON . NUMBER
+
+    NUMBER  shift, and go to state 76
+
+
+State 56
+
+   15 statement: ID LBRACKET ensemble RBRACKET . ASSIGN ensemble ENDLINE
+
+    ASSIGN  shift, and go to state 77
+
+
+State 57
+
+    8 endline_opt: ENDLINE .
+
+    $default  reduce using rule 8 (endline_opt)
+
+
+State 58
+
+    6 final: FINAL ensemble endline_opt .
+
+    $default  reduce using rule 6 (final)
+
+
+State 59
+
+   14 statement: ID NUMBER ASSIGN ensemble ENDLINE .
+
+    $default  reduce using rule 14 (statement)
+
+
+State 60
+
+   18 ensemble: ensemble . COMMA expr
+   19         | ensemble . COMMA expr COLON NUMBER
+   33 expr: ID LBRACKET ensemble . RBRACKET
+
+    COMMA     shift, and go to state 45
+    RBRACKET  shift, and go to state 78
+
+
+State 61
+
+   34 expr: LPAREN ensemble RPAREN .
+   35     | LPAREN ensemble RPAREN . LBRACKET ensemble RBRACKET
+
+    LBRACKET  shift, and go to state 79
+
+    $default  reduce using rule 34 (expr)
+
+
+State 62
+
+   39 expr: REDUCE PLUS LPAREN . ensemble RPAREN
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    ensemble  go to state 80
+    expr      go to state 31
+
+
+State 63
+
+   38 expr: REDUCE XOR LPAREN . ensemble RPAREN
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    ensemble  go to state 81
+    expr      go to state 31
+
+
+State 64
+
+   36 expr: REDUCE AND LPAREN . ensemble RPAREN
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    ensemble  go to state 82
+    expr      go to state 31
+
+
+State 65
+
+   37 expr: REDUCE OR LPAREN . ensemble RPAREN
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    ensemble  go to state 83
+    expr      go to state 31
+
+
+State 66
+
+   18 ensemble: ensemble . COMMA expr
+   19         | ensemble . COMMA expr COLON NUMBER
+   40 expr: EXPAND LPAREN ensemble . RPAREN
+
+    COMMA   shift, and go to state 45
+    RPAREN  shift, and go to state 84
+
+
+State 67
+
+   18 ensemble: ensemble COMMA expr .
+   19         | ensemble COMMA expr . COLON NUMBER
+   23 expr: expr . PLUS expr
+   24     | expr . MINUS expr
+   25     | expr . XOR expr
+   26     | expr . AND expr
+   27     | expr . OR expr
+   30     | expr . MUL expr
+   31     | expr . DIV expr
+   32     | expr . MOD expr
+
+    PLUS   shift, and go to state 47
+    MINUS  shift, and go to state 48
+    XOR    shift, and go to state 49
+    AND    shift, and go to state 50
+    OR     shift, and go to state 51
+    MUL    shift, and go to state 52
+    DIV    shift, and go to state 53
+    MOD    shift, and go to state 54
+    COLON  shift, and go to state 85
+
+    $default  reduce using rule 18 (ensemble)
+
+
+State 68
+
+   23 expr: expr . PLUS expr
+   23     | expr PLUS expr .
+   24     | expr . MINUS expr
+   25     | expr . XOR expr
+   26     | expr . AND expr
+   27     | expr . OR expr
+   30     | expr . MUL expr
+   31     | expr . DIV expr
+   32     | expr . MOD expr
+
+    XOR  shift, and go to state 49
+    AND  shift, and go to state 50
+    MUL  shift, and go to state 52
+    DIV  shift, and go to state 53
+    MOD  shift, and go to state 54
+
+    $default  reduce using rule 23 (expr)
+
+
+State 69
+
+   23 expr: expr . PLUS expr
+   24     | expr . MINUS expr
+   24     | expr MINUS expr .
+   25     | expr . XOR expr
+   26     | expr . AND expr
+   27     | expr . OR expr
+   30     | expr . MUL expr
+   31     | expr . DIV expr
+   32     | expr . MOD expr
+
+    XOR  shift, and go to state 49
+    AND  shift, and go to state 50
+    MUL  shift, and go to state 52
+    DIV  shift, and go to state 53
+    MOD  shift, and go to state 54
+
+    $default  reduce using rule 24 (expr)
+
+
+State 70
+
+   23 expr: expr . PLUS expr
+   24     | expr . MINUS expr
+   25     | expr . XOR expr
+   25     | expr XOR expr .
+   26     | expr . AND expr
+   27     | expr . OR expr
+   30     | expr . MUL expr
+   31     | expr . DIV expr
+   32     | expr . MOD expr
+
+    $default  reduce using rule 25 (expr)
+
+
+State 71
+
+   23 expr: expr . PLUS expr
+   24     | expr . MINUS expr
+   25     | expr . XOR expr
+   26     | expr . AND expr
+   26     | expr AND expr .
+   27     | expr . OR expr
+   30     | expr . MUL expr
+   31     | expr . DIV expr
+   32     | expr . MOD expr
+
+    $default  reduce using rule 26 (expr)
+
+
+State 72
+
+   23 expr: expr . PLUS expr
+   24     | expr . MINUS expr
+   25     | expr . XOR expr
+   26     | expr . AND expr
+   27     | expr . OR expr
+   27     | expr OR expr .
+   30     | expr . MUL expr
+   31     | expr . DIV expr
+   32     | expr . MOD expr
+
+    XOR  shift, and go to state 49
+    AND  shift, and go to state 50
+    MUL  shift, and go to state 52
+    DIV  shift, and go to state 53
+    MOD  shift, and go to state 54
+
+    $default  reduce using rule 27 (expr)
+
+
+State 73
+
+   23 expr: expr . PLUS expr
+   24     | expr . MINUS expr
+   25     | expr . XOR expr
+   26     | expr . AND expr
+   27     | expr . OR expr
+   30     | expr . MUL expr
+   30     | expr MUL expr .
+   31     | expr . DIV expr
+   32     | expr . MOD expr
+
+    $default  reduce using rule 30 (expr)
+
+
+State 74
+
+   23 expr: expr . PLUS expr
+   24     | expr . MINUS expr
+   25     | expr . XOR expr
+   26     | expr . AND expr
+   27     | expr . OR expr
+   30     | expr . MUL expr
+   31     | expr . DIV expr
+   31     | expr DIV expr .
+   32     | expr . MOD expr
+
+    $default  reduce using rule 31 (expr)
+
+
+State 75
+
+   23 expr: expr . PLUS expr
+   24     | expr . MINUS expr
+   25     | expr . XOR expr
+   26     | expr . AND expr
+   27     | expr . OR expr
+   30     | expr . MUL expr
+   31     | expr . DIV expr
+   32     | expr . MOD expr
+   32     | expr MOD expr .
+
+    $default  reduce using rule 32 (expr)
+
+
+State 76
+
+   17 ensemble: expr COLON NUMBER .
+
+    $default  reduce using rule 17 (ensemble)
+
+
+State 77
+
+   15 statement: ID LBRACKET ensemble RBRACKET ASSIGN . ensemble ENDLINE
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    ensemble  go to state 86
+    expr      go to state 31
+
+
+State 78
+
+   33 expr: ID LBRACKET ensemble RBRACKET .
+
+    $default  reduce using rule 33 (expr)
+
+
+State 79
+
+   35 expr: LPAREN ensemble RPAREN LBRACKET . ensemble RBRACKET
+
+    NUMBER  shift, and go to state 23
+    ID      shift, and go to state 24
+    BINV    shift, and go to state 25
+    INV     shift, and go to state 26
+    LPAREN  shift, and go to state 27
+    REDUCE  shift, and go to state 28
+    EXPAND  shift, and go to state 29
+
+    ensemble  go to state 87
+    expr      go to state 31
+
+
+State 80
+
+   18 ensemble: ensemble . COMMA expr
+   19         | ensemble . COMMA expr COLON NUMBER
+   39 expr: REDUCE PLUS LPAREN ensemble . RPAREN
+
+    COMMA   shift, and go to state 45
+    RPAREN  shift, and go to state 88
+
+
+State 81
+
+   18 ensemble: ensemble . COMMA expr
+   19         | ensemble . COMMA expr COLON NUMBER
+   38 expr: REDUCE XOR LPAREN ensemble . RPAREN
+
+    COMMA   shift, and go to state 45
+    RPAREN  shift, and go to state 89
+
+
+State 82
+
+   18 ensemble: ensemble . COMMA expr
+   19         | ensemble . COMMA expr COLON NUMBER
+   36 expr: REDUCE AND LPAREN ensemble . RPAREN
+
+    COMMA   shift, and go to state 45
+    RPAREN  shift, and go to state 90
+
+
+State 83
+
+   18 ensemble: ensemble . COMMA expr
+   19         | ensemble . COMMA expr COLON NUMBER
+   37 expr: REDUCE OR LPAREN ensemble . RPAREN
+
+    COMMA   shift, and go to state 45
+    RPAREN  shift, and go to state 91
+
+
+State 84
+
+   40 expr: EXPAND LPAREN ensemble RPAREN .
+
+    $default  reduce using rule 40 (expr)
+
+
+State 85
+
+   19 ensemble: ensemble COMMA expr COLON . NUMBER
+
+    NUMBER  shift, and go to state 92
+
+
+State 86
+
+   15 statement: ID LBRACKET ensemble RBRACKET ASSIGN ensemble . ENDLINE
+   18 ensemble: ensemble . COMMA expr
+   19         | ensemble . COMMA expr COLON NUMBER
+
+    COMMA    shift, and go to state 45
+    ENDLINE  shift, and go to state 93
+
+
+State 87
+
+   18 ensemble: ensemble . COMMA expr
+   19         | ensemble . COMMA expr COLON NUMBER
+   35 expr: LPAREN ensemble RPAREN LBRACKET ensemble . RBRACKET
+
+    COMMA     shift, and go to state 45
+    RBRACKET  shift, and go to state 94
+
+
+State 88
+
+   39 expr: REDUCE PLUS LPAREN ensemble RPAREN .
+
+    $default  reduce using rule 39 (expr)
+
+
+State 89
+
+   38 expr: REDUCE XOR LPAREN ensemble RPAREN .
+
+    $default  reduce using rule 38 (expr)
+
+
+State 90
+
+   36 expr: REDUCE AND LPAREN ensemble RPAREN .
+
+    $default  reduce using rule 36 (expr)
+
+
+State 91
+
+   37 expr: REDUCE OR LPAREN ensemble RPAREN .
+
+    $default  reduce using rule 37 (expr)
+
+
+State 92
+
+   19 ensemble: ensemble COMMA expr COLON NUMBER .
+
+    $default  reduce using rule 19 (ensemble)
+
+
+State 93
+
+   15 statement: ID LBRACKET ensemble RBRACKET ASSIGN ensemble ENDLINE .
+
+    $default  reduce using rule 15 (statement)
+
+
+State 94
+
+   35 expr: LPAREN ensemble RPAREN LBRACKET ensemble RBRACKET .
+
+    $default  reduce using rule 35 (expr)

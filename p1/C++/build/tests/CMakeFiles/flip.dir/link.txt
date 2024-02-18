@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/flip.dir/flip.c.o flip.bc.o -o flip 

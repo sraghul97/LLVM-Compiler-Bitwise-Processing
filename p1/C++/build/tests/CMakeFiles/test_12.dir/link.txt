@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/test_12.dir/test_12.c.o test_12.bc.o -o test_12 
